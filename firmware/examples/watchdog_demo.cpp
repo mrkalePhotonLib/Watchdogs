@@ -19,7 +19,7 @@
 //#define PHOTON_SERIAL             // Outputing to the serial port
 
 // Libraries
-#include "Watchdogs.h"
+#include "watchdogs/watchdogs.h"
 #define SKETCH "WATCHDOGS_DEMO 1.0.0"
 
 const unsigned int PERIOD_PUBLISH = 3000;      // Publishing time period in ms 

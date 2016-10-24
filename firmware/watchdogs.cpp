@@ -1,4 +1,4 @@
-#include "Watchdogs.h"
+#include "watchdogs.h"
 #include "SparkIntervalTimer/SparkIntervalTimer.h"
 
 //-------------------------------------------------------------------------
