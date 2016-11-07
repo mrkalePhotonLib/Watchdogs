@@ -4,4 +4,7 @@
   "license": "MIT",
   "version": "1.0.0",
   "description": "Library to employ independent and window watch dogs of STM32F205 microcontroller for the Particle Photon. The library is based on the library 'photon-wdgs', but fixed and reformatted."
+  "dependencies": {
+    "SparkIntervalTimer":  "*"
+  }
 }
