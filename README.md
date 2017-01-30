@@ -10,7 +10,6 @@ The library utilizes hardware watchdogs of the microcontroller STM32F205 for ens
 
 <a id="dependency"></a>
 ## Dependency
-- **Particle.h**: Includes alternative (C++) data type definitions.
 - **SparkIntervalTimer.h**: Includes interval timer library.
 
 
@@ -36,7 +35,7 @@ The method starts one or both hardware watchdogs.
 - The constructor has all arguments defaulted. If some argument after some defaulted arguments should have a specific value, use corresponding constants in place of those defaulted arguments.
 
 #### Syntax
-    Watchdogs::begin(unsigned long timeout);
+    voind begin(unsigned long timeout);
 
 #### Parameters
 <a id="prm_timeout"></a>
@@ -73,4 +72,11 @@ None
 #### Returns
 None
 
+#### Example
+``` cpp
+void loop()
+{
+  Watchdogs::tickle();  
+}
+```
 [Back to interface](#interface)

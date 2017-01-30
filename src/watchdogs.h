@@ -36,12 +36,11 @@
 #define WATCHDOGS_H
 #define WATCHDOGS_VERSION "Watchdogs 1.0.0"
 
-#include "Particle.h"
-#include "SparkIntervalTimer/SparkIntervalTimer.h"
+#include <SparkIntervalTimer.h>
 
-#define WATCHDOGS_TIMOUT_DEF 15000      // Default timeout in ms
-#define WATCHDOGS_TIMOUT_MIN 10         // Minimal valid timeout in ms
-#define WATCHDOGS_TIMOUT_MAX 30000      // Maximal valid timeout in ms
+#define WATCHDOGS_TIMOUT_DEF 15000      // Default timeout in milliseconds
+#define WATCHDOGS_TIMOUT_MIN 10         // Minimal valid timeout in milliseconds
+#define WATCHDOGS_TIMOUT_MAX 30000      // Maximal valid timeout in milliseconds
 
 namespace Watchdogs
 {
@@ -59,19 +58,14 @@ namespace Watchdogs
 //-------------------------------------------------------------------------
 
 /*
-  Reset watchdog timers
+  Start watchdog timers.
 
   DESCRIPTION:
-  The method starts one or both hardware watchdogs.
-  - A watchdog resets the microcontroller, if it does not get a tickle 
-    within the timeout.
-  - The constructor has all arguments defaulted. If some argument after
-    some defaulted arguments should have a specific value, use corresponding
-    constants in place of those defaulted arguments.
+  The method starts both hardware watchdogs.
 
   PARAMETERS:
-  timeout - time in milliseconds of waiting for petting the watchdogs.
-            The percision is 10ms.
+  timeout - Time in milliseconds to wait for petting the watchdogs.
+            The percision is 10 ms.
           - Data type: non-negative 32-bit integer
           - Default value: WATCHDOGS_TIMOUT_DEF
           - Limited range: WATCHDOGS_TIMOUT_MIN ~ WATCHDOGS_TIMOUT_MAX
@@ -81,7 +75,7 @@ namespace Watchdogs
   void begin(unsigned long timeout = WATCHDOGS_TIMOUT_DEF);
 
 /*
-  Reset watchdog timers
+  Reset watchdog timers.
 
   DESCRIPTION:
   The method resets running watchdog timers. It should be called regularly

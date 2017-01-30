@@ -1,5 +1,4 @@
-#include "watchdogs.h"
-#include "SparkIntervalTimer/SparkIntervalTimer.h"
+#include <watchdogs.h>
 
 //-------------------------------------------------------------------------
 // External attributes
@@ -10,6 +9,7 @@ unsigned long Watchdogs::_aliveCount;
 unsigned long Watchdogs::_timeoutval;
 bool Watchdogs::_wwdgRunning;
 bool Watchdogs::_iwdgRunning;
+
 
 //-------------------------------------------------------------------------
 // Public methods
@@ -48,11 +48,13 @@ void Watchdogs::begin(unsigned long timeout)
     System.on(firmware_update_pending, Watchdogs::_handler);
 }
 
+
 // Reset watchdog timer
 void Watchdogs::tickle() 
 {
     Watchdogs::_aliveCount = 0;
 }
+
 
 //-------------------------------------------------------------------------
 // Private methods
@@ -69,6 +71,7 @@ void Watchdogs::_tickleWDGs()
         Watchdogs::_aliveCount++;
     }
 }
+
 
 void Watchdogs::_handler(system_event_t event, int param) {
     if (Watchdogs::_wwdgRunning) WWDG_DeInit();
