@@ -5,9 +5,11 @@
   DESCRIPTION:
   This sketch demonstrates the basic usage of the library and reseting the
   microcontroller after the timeout.
-  - At first the sketch taps the watchdogs several times.
-  - Then it stops tapping watchdogs and they reset the microcontroller
+  * At first the sketch taps the watchdogs several times.
+  * Then it stops tapping watchdogs and they reset the microcontroller
     after defined timeout past the last tap.
+  * Don't forget include the library SparkIntervalTimer to the application.
+    
 
   LICENSE:
   This program is free software; you can redistribute it and/or modify
